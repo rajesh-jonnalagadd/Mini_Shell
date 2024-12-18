@@ -1,18 +1,18 @@
 # Mini_Shell
 
-#Description:-
+# Description:-
 
             The MiniShell project is a simplified implementation of a Unix-like shell for Linux. It allows users to interact with the system by executing commands, handling built-in functions, and supporting redirections, pipes, and signals.
 
 This project is designed to deepen understanding of process management, system calls, and the fundamentals of a Unix shell.
 
-#Features
+# Features
 
 Command Execution
 
 Executes simple Unix commands (e.g., ls, pwd, echo, clear).
 
-#Built-in Commands
+# Built-in Commands
 
 Supports common built-in commands:
 
@@ -24,15 +24,15 @@ exit  : Exit the shell.
 
 clear : Clear the terminal.
 
-#Pipes
+# Pipes
 
 Implements piping to connect commands (e.g., ls | grep file).
 
-#Environment Variables
+# Environment Variables
 
 Handles environment variables using $ (e.g., $SHELL).
 
-#Signal Handling
+# Signal Handling
 
 Manages signals like:
 
@@ -40,11 +40,11 @@ Ctrl+C (SIGINT): Interrupt the current process.
 
 Ctrl+Z (SIGTSTP): Suspend the current process.
 
-#Error Handling
+# Error Handling
 
 Displays appropriate error messages for invalid inputs or operations.
 
-#Requirements
+# Requirements
 
 Operating System: Linux
 
@@ -52,7 +52,7 @@ Language: C
 
 Compiler: GCC (GNU Compiler Collection)
 
-Compilation
+# Compilation
 
 To compile the project, use the following command:
 
@@ -64,7 +64,7 @@ Start the shell by executing the compiled binary:
 
 $ ./mini_shell
 
-#License
+# License
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this software as per the terms of the license.
 
