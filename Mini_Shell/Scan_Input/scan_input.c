@@ -80,27 +80,7 @@ void scan_input(char *prompt, char *input_string)
             }
             else if (pid1 == 0)
             {
-                // Child process
-                char *argv[10]; 
-                int i = 0;
-
-
-                // Tokenize input string into arguments
-                char *token = strtok(input_string, " ");
-             
-                while (token != NULL)
-                    {
-                        argv[i++] = token;
-                        token = strtok(NULL, " ");
-                    }
-                    argv[i] = NULL; // Null-terminate the argv array
-
-                // Execute the command
-                if (execvp(argv[0], argv) < 0)
-                {
-                    perror(argv[0]);
-                    exit(1);
-                }
+		execute_external_commands(input_string);
             }
             else
             {
@@ -124,7 +104,11 @@ void scan_input(char *prompt, char *input_string)
         {
             display_signals();
         }
+     if (strcmp("fg",input_string) == 0)
+        {
+           fflush(stdin);
+           resume_signal();
+        }
         input_string[0] = 0;
     }   
 }
- 

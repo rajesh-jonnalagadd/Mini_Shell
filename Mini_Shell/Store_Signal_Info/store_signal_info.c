@@ -45,3 +45,45 @@ void display_signals()
 }
 
 
+
+int resume_signal()
+{
+    char buff[1024];
+    if( head == NULL)
+    {
+        printf("Nothig to execute\n");
+    }else
+    {
+        strcpy(buff,head->input_string);
+        int pid=fork();
+        if(pid==0)
+	{
+            execute_external_commands(buff);
+        }
+        int status;
+        waitpid(pid,&status,WUNTRACED);
+        head= head->next;
+    }
+}
+
+
+void execute_external_commands(char *input_string)
+{
+    char *argv[10];
+    int i = 0;
+
+                // Tokenize input string into arguments
+                char *token = strtok(input_string, " ");
+                while (token != NULL)
+                {
+                    argv[i++] = token;
+                    token = strtok(NULL, " ");
+                }
+                argv[i] = NULL; // Null-terminate the argv array
+                //Execute the command
+                if (execvp(argv[0], argv) < 0)
+                {
+                    perror(argv[0]);
+                    exit(1);
+                }
+}

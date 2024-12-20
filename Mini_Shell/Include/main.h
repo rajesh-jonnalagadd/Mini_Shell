@@ -44,4 +44,7 @@ void signal_handler(int );
 void execute_piped_commands(char *input_string);
 void add_signal_to_list(char *input_string,int pid);
 void display_signals();
+
+int resume_signal();
+void execute_external_commands(char *input_string);
 #endif
