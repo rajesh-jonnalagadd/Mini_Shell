@@ -24,13 +24,23 @@ exit  : Exit the shell.
 
 clear : Clear the terminal.
 
+# Job Control
+Implements job control commands:
+
+jobs:
+Lists active jobs in the current shell session.
+Displays job IDs, statuses, and associated commands.
+
+fg:
+Brings a specified background or suspended job to the foreground.
+
 # Pipes
 
-Implements piping to connect commands (e.g., ls | grep file).
+Implements piping to connect commands (e.g.ls | grep file).
 
 # Environment Variables
 
-Handles environment variables using $ (e.g., $SHELL).
+Handles environment variables using $ (e.g. $SHELL).
 
 # Signal Handling
 
